@@ -66,8 +66,8 @@ function [p_in, p_out] = afilter(omega_in,dt,t_max,trans_cutoff, C, R1, R3)
     [F_out, M_out, ~] = dft(out(cut:end),omega_in*2, dt);
     [F_in, M_in, ~] = dft(in,omega_in*2, dt);
     
-    [p_in,~] = findpeaks(F_in(1:M_in), 'threshold', 0); %max(F_in)/1000
-    [p_out,~] = findpeaks(F_out(1:M_out), 'threshold', 0);
+    [p_in,~] = findpeaks(F_in(1:M_in));
+    [p_out,~] = findpeaks(F_out(1:M_out));
     
     if(isempty(p_out))
         p_out = 0;
