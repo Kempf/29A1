@@ -8,7 +8,7 @@ function out = afilter(omega_in,dt,t_max,trans_cutoff)
     % Set up
     
     t = 0:dt:t_max;
-    in = cos(2*pi*omega_in*t);
+    in = sin(2*pi*omega_in*t);
     l = size(t,2);
     
     C = 10^(-7);
