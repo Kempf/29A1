@@ -13,7 +13,8 @@ function [ p_in, p_out ] = pfilter ( omega_in,dt,t_max,trans_cutoff )
     R1 = 45300;
     R3 = 11300;
     
-    A = [-1/(C*R3) 1/(C*R1) -1/(C*R1); 0 -2/(C*R1) 1/(C*R1); -1/(C*R3) 2/(R1*C) -2/(R1*C)];
+    A = [-1/(C*R3) 1/(C*R1) -1/(C*R1); ...
+    0 -2/(C*R1) 1/(C*R1); -1/(C*R3) 2/(R1*C) -2/(R1*C)];
     X = zeros(3,l);
     B = [0 1; 1/(C*R1) 0; 0 1];
     
