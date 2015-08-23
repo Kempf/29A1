@@ -35,7 +35,7 @@ function [ p_in, p_out ] = pfilter ( omega_in,dt,t_max,trans_cutoff )
     
     % DFT
     
-    function [F, M, freq] = dft(u, max_freq, dt)
+    function [F, M] = dft(u, max_freq, dt)
         % DFT helper function
         N = size(u,2);
         F = abs(fft(u))/N;
@@ -44,8 +44,8 @@ function [ p_in, p_out ] = pfilter ( omega_in,dt,t_max,trans_cutoff )
         M = size(freq,2);
     end
     
-    [F_out, M_out, ~] = dft(out(cut:end),omega_in*2, dt);
-    [F_in, M_in, ~] = dft(in,omega_in*2, dt);
+    [F_out, M_out] = dft(out(cut:end),omega_in*2, dt);
+    [F_in, M_in] = dft(in,omega_in*2, dt);
     
     % Finding peaks
     
