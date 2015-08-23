@@ -4,7 +4,7 @@ function [ p_in, p_out ] = pfilter ( omega_in,dt,t_max,trans_cutoff )
     % Input and time scale
     
     t = 0:dt:t_max;
-    in = cos(2*pi*omega_in*t);
+    in = sin(2*pi*omega_in*t);
     l = size(t,2);
     
     % ODE set up
