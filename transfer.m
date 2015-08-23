@@ -45,7 +45,8 @@ function [p_in, p_out] = afilter(omega_in,dt,t_max,trans_cutoff, C, R1, R3)
     in = sin(2*pi*omega_in*t);
     l = size(t,2);
     
-    A = [-1/(C*R3) 1/(C*R1) -1/(C*R1); 0 -2/(C*R1) 1/(C*R1); -1/(C*R3) 2/(R1*C) -2/(R1*C)];
+    A = [-1/(C*R3) 1/(C*R1) -1/(C*R1); ...
+        0 -2/(C*R1) 1/(C*R1); -1/(C*R3) 2/(R1*C) -2/(R1*C)];
     X = zeros(3,l);
     B = [0 1; 1/(C*R1) 0; 0 1];
     
